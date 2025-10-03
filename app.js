@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <section class="hero" style="text-align:left">
       <div class="tagline">🧪 作答模式 · 科目：<span class="kbd">${subject}</span></div>
       <h1>開始測驗</h1>
-      <p class="muted">本卷固定 <span class="kbd">${fixedN}</span> 題。交卷前可自由切換題目並修改答案；交卷後跳到結果頁。</p>
+      <p class="muted" style="text-align:center">本卷固定 <span class="kbd">${fixedN}</span> 題。交卷前可自由切換題目並修改答案；交卷後跳到結果頁。</p>
     </section>
 
     <section class="card">

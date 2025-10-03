@@ -2,6 +2,8 @@
   --bg:#0b1020; --bg2:#0c1227; --card:#0f1730; --ink:#e9effa; --muted:#9fb0d2;
   --border:#23304d; --accent:#6cb1ff; --accent-2:#8bd5ff; --shadow:0 18px 60px rgba(0,0,0,.35);
   --good:#27ae60; --bad:#ff6b6b;
+  /* 新增：統一按鈕高度（可依喜好調整） */
+  --btn-h: 48px;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -24,6 +26,7 @@ body{
 .nav__inner{
   max-width: 1100px; margin: 0 auto; padding: 10px 16px;
   display:flex; align-items:center; gap: 18px;
+  flex-wrap: nowrap;          /* 手機保持單行，不換行 */
 }
 .brand{font-weight:800; letter-spacing:.3px}
 .spacer{flex:1}
@@ -46,10 +49,13 @@ body{
 .cta-row{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:22px; }
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  padding:12px 18px; border-radius:14px; font-weight:800; letter-spacing:.3px;
+  height: var(--btn-h);                  /* 統一等高 */
+  padding:0 18px;                        /* 上下由高度決定，左右用 padding */
+  border-radius:14px; font-weight:800; letter-spacing:.3px;
   text-decoration:none; border:1px solid var(--border); box-shadow: var(--shadow);
   transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
-  min-width: 220px;
+  min-width: 220px;                      /* 預設比較寬的按鈕 */
+  line-height:1;                         /* 避免行高撐高 */
 }
 .btn:hover{ transform: translateY(-1px) }
 .btn--primary{ background:linear-gradient(180deg, var(--accent), var(--accent-2)); color:#071425; border:0; }
@@ -89,7 +95,7 @@ code{background:#0c1423;border:1px solid var(--border);padding:2px 6px;border-ra
 .q.locked .opt input{ pointer-events:none; }
 .q .status{ font-size:12px; color:var(--muted); margin-left:8px; }
 
-/* ===== 新增：上一/下一題導覽與題號總表 ===== */
+/* ===== 上/下一題導覽與題號總表 ===== */
 
 /* 上/下一題靠左；交卷靠右 */
 .nav-qa{
@@ -107,7 +113,6 @@ code{background:#0c1423;border:1px solid var(--border);padding:2px 6px;border-ra
   display:flex;
 }
 
-
 /* 題號總表（方框） */
 .pager{
   display:grid;
@@ -121,10 +126,39 @@ code{background:#0c1423;border:1px solid var(--border);padding:2px 6px;border-ra
   background:#0f1730; color:var(--ink); cursor:pointer;
 }
 .pager .box:hover{ background:#0e162a; border-color:#24304a }
-.pager .box.answered{ background:#12213f; border-color:#2b3d67 }
+.pager .box.answered{ background:#2b3346; border-color:#56617a; color:#636364; }
 .pager .box.current{ outline:2px solid var(--accent); box-shadow:0 0 0 2px rgba(108,177,255,.25) inset }
 .pager .box.locked{ opacity:.6; cursor:default }
 
 /* 交卷後的結果清單用的正/誤標色 */
 .opt.is-correct{ color:#27ae60; background:rgba(39,174,96,.15); border-color:rgba(39,174,96,.55) }
 .opt.is-wrong{   color:#ff6b6b; background:rgba(255,107,107,.15); border-color:rgba(255,107,107,.55) }
+
+/* 手機導覽列優化：縮間距、隱藏 pill，避免擠到換行 */
+.brand, .nav a, .pill{ white-space: nowrap; }
+@media (max-width: 600px){
+  .nav__inner{ gap:8px; }
+  .brand{ font-size:18px; }
+  .nav a{ padding:6px 8px; }
+  .pill{ display:none; }
+}
+
+/* 題數＋三顆按鈕：三顆等寬 */
+.actions-row{
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr; /* 左邊題數固定寬，三顆按鈕平均 */
+  gap: 12px;
+  align-items: center;
+}
+.actions-row .btn{
+  width: 100%;
+  min-width: 0;         /* 取消預設 min-width 影響，才能等寬 */
+  justify-content: center;
+}
+
+/* 小螢幕：題數一欄 + 三顆按鈕各自一整行 */
+@media (max-width: 560px){
+  .actions-row{
+    grid-template-columns: 1fr;
+  }
+}

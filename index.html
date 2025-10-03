@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>無人機題庫模擬｜Drone Quiz</title>
+  <meta name="color-scheme" content="dark light">
+  <!-- 關鍵：同層、加上版本號避免快取 -->
+  <link rel="stylesheet" href="./style.css?v=5">
+</head>
+<body>
+  <div class="nav">
+    <div class="nav__inner">
+      <div class="brand">Drone Quiz</div>
+      <span class="pill">單頁多科目 · 不儲存成績</span>
+      <div class="spacer"></div>
+      <a href="index.html">首頁</a>
+      <a href="about.html">關於</a>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="tagline">🚀 簡易但好看 · 適合手機 · 即將支援多科目抽題</div>
+      <h1>簡易模擬測驗系統</h1>
+      <p>正式測驗前先在這裡練習一回合。支援「抽題、作答、交卷顯示分數與錯題」，且不儲存成績。</p>
+
+      <div class="cta-row">
+        <a class="btn btn--primary" href="index.html?subject=basic">開始測驗（普通）</a>
+        <a class="btn btn--ghost" href="index.html?subject=pro">開始測驗（專業）</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>特色</h3>
+        <ul class="list">
+          <li>單頁多科目：網址參數 <code>?subject=law</code>、<code>?subject=meteorology</code></li>
+          <li>不儲存成績：交卷後僅顯示本次分數與錯題</li>
+          <li>純前端：可放 GitHub Pages / Netlify / S3（免伺服器）</li>
+          <li>手機優先設計：字級、間距、點擊區塊都優化</li>
+        </ul>
+      </article>
+      <aside class="card">
+        <h3>下一步</h3>
+        <ol class="list">
+          <li>新增 <code>questions/basic.json</code> 與 <code>questions/pro.json</code></li>
+          <li>加入 <code>app.js</code>：讀參數→載題庫→抽題→交卷顯示結果</li>
+          <li>樣式已就緒，功能上線只需一支 JS</li>
+        </ol>
+      </aside>
+    </section>
+
+    <footer>© 2025 Drone Quiz · UI by you & ChatGPT</footer>
+  </main>
+<script src="./app.js?v=5" defer></script>
+</body>
+</html>

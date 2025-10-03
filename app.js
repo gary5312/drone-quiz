@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <button id="nextBtn" class="btn btn--ghost" style="min-width:120px">下一題</button>
       </div>
       <div class="nav-qa__right">
-        <button id="submitBtn" class="btn btn--primary" style="min-width:140px" disabled title="還有未作答的題目">交卷</button>
+        <button id="submitBtn" class="btn btn--primary" style="min-width:120px" disabled title="還有未作答的題目">交卷</button>
       </div>
     </div>
 

@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <section class="card">
       <div class="row" style="align-items:center; gap:12px">
         <span class="kbd">題數：${fixedN}</span>
-        <button id="startBtn"     class="btn btn--primary" style="min-width:auto">開始測驗</button>
         <button id="reshuffleBtn" class="btn btn--ghost"   style="min-width:auto">重新抽題</button>
         <a class="btn" href="index.html" style="min-width:auto">← 返回首頁</a>
       </div>

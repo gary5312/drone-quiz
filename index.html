@@ -11,7 +11,7 @@
 <body>
   <div class="nav">
     <div class="nav__inner">
-      <div class="brand">Drone Quiz</div>
+      <a class="brand brand--home" href="index.html">Drone Quiz</a>
       <div class="spacer"></div>
       <a href="index.html">首頁</a>
       <a href="about.html">關於</a>
@@ -20,7 +20,7 @@
 
   <main class="wrap">
     <section class="hero">
-      <h1>無人機學科模擬測驗系統</h1>
+      <h1>無人機學科模擬測驗</h1>
 
       <div class="cta-row">
         <a class="btn btn--primary" href="index.html?subject=basic">開始測驗（普通）</a>
@@ -28,27 +28,40 @@
       </div>
     </section>
 
-    <section class="grid">
-      <article class="card">
-        <h3>特色</h3>
+    <section class="card card--center">
+    <h3>無人機分級</h3>
+    <p class="muted" style="margin:4px 0 14px">
+        下列為常見的重量級距與證照類別簡介（實際以民航局/主管機關公告為準）。
+    </p>
+
+    <div class="cols">
+        <div>
+        <h4 style="margin:0 0 8px">重量級距（參考）</h4>
         <ul class="list">
-          <li>單頁多科目：網址參數 <code>?subject=law</code>、<code>?subject=meteorology</code></li>
-          <li>不儲存成績：交卷後僅顯示本次分數與錯題</li>
-          <li>純前端：可放 GitHub Pages / Netlify / S3（免伺服器）</li>
-          <li>手機優先設計：字級、間距、點擊區塊都優化</li>
+            <li>未達 <strong>2&nbsp;kg</strong></li>
+            <li><strong>2–15&nbsp;kg</strong>（常見機型，多具 GPS）</li>
+            <li><strong>15–25&nbsp;kg</strong></li>
+            <li><strong>25–150&nbsp;kg</strong></li>
+            <li><strong>150&nbsp;kg 以上</strong></li>
         </ul>
-      </article>
-      <aside class="card">
-        <h3>下一步</h3>
-        <ol class="list">
-          <li>新增 <code>questions/basic.json</code> 與 <code>questions/pro.json</code></li>
-          <li>加入 <code>app.js</code>：讀參數→載題庫→抽題→交卷顯示結果</li>
-          <li>樣式已就緒，功能上線只需一支 JS</li>
-        </ol>
-      </aside>
+        </div>
+
+        <div>
+        <h4 style="margin:0 0 8px">操作證類別（概要）</h4>
+        <ul class="list">
+            <li><strong>免操作證</strong>：自然人休閒娛樂用且未達 2&nbsp;kg。</li>
+            <li><strong>普通操作證</strong>：自然人休閒娛樂用 2–25&nbsp;kg。</li>
+            <li><strong>專業操作證－基本級/高級</strong>：依任務風險與機種分級，含 I / II / III 與 A–D 等級（如 I&nbsp;A、I&nbsp;B、II&nbsp;C、III&nbsp;D）。</li>
+        </ul>
+        </div>
+    </div>
+
+    <p class="muted" style="margin-top:12px">
+        提示：若要詳細資料，請參考民航局網站最新規定。
+    </p>
     </section>
 
-    <footer>© 2025 Drone Quiz · UI by you & ChatGPT</footer>
+    <footer>© 2025 Drone Quiz</footer>
   </main>
 <script src="./app.js?v=5" defer></script>
 </body>

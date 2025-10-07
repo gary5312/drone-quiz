@@ -162,3 +162,25 @@ code{background:#0c1423;border:1px solid var(--border);padding:2px 6px;border-ra
     grid-template-columns: 1fr;
   }
 }
+
+/* 單卡置中（比一般卡片更窄，正中顯示） */
+.card--center{
+  max-width: 900px;      /* 需要更窄/更寬可調整 */
+  margin: 28px auto 0;   /* auto 讓它水平置中 */
+}
+
+/* 兩欄內容：手機 1 欄、桌面 2 欄 */
+.cols{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 860px){
+  .cols{ grid-template-columns: 1fr 1fr; }
+}
+
+/* h4 視覺微調（跟你現有 h3 區隔） */
+.card h4{
+  font-size: 16px;
+  color: var(--ink);
+}

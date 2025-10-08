@@ -108,7 +108,7 @@ function renderOne(i){
         ${q.options.map((op,k)=>`
           <label class="opt" data-idx="${k}">
             <input type="radio" name="${q.id}" value="${k}" ${saved===k?'checked':''} ${locked?'disabled':''}>
-            <strong>${String.fromCharCode(65+k)}.</strong> ${op}
+            ${op}
           </label>
         `).join('')}
       </div>

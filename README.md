@@ -1,6 +1,7 @@
-<img width="883" height="408" alt="image" src="https://github.com/user-attachments/assets/e0371fe8-1f28-462f-9c0d-9a960d721ca4" />## 無人機學科測驗（概覽）
+## 無人機學科測驗（概覽）
 
-測驗網址：<https://gary5312.github.io/drone-quiz/>
+**測驗網址**：<https://gary5312.github.io/drone-quiz/>
+
 下列為常見的重量級距與證照類別簡介（實際以民航局／主管機關公告為準）。
 
 ### 重量級距（參考）
